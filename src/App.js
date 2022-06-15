@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import { Typography } from '@mui/material';
+import Form from './components/Form';
+import Menu from './components/Menu';
+import { Route, Routes } from 'react-router-dom';
+import About from './components/About';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Menu />
+      <Typography variant="h2">Hello World</Typography>
+      <Typography variant="body1">This is random text, because I need placeholder text.</Typography>
+      <Form/>
+      <Routes>
+        <Route path="/about"
+        element={<About />} />
+      </Routes>
     </div>
   );
 }
